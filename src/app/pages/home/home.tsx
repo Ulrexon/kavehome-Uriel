@@ -7,7 +7,15 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <img className={styles.homeImage} src="/images/imagenhome.png" alt="Home Image" />
-      <p style={{ textAlign: 'center' }}>Inspírate</p>
+      <h2 style={{ textAlign: 'center' }}>Inspírate</h2>
+      <div className={styles.botoneraContainer}>
+        <div className={styles.button1}>Estancias</div>
+        <div className={styles.button1}>Estil</div>
+        <div className={styles.button1}>Muebles</div>
+        <div className={styles.button1}>Decoración</div>
+        <div className={styles.button1}>We are Kave</div>
+        <div className={styles.button1}>Proyectos</div>
+      </div>
     </div>    
   );
 }
