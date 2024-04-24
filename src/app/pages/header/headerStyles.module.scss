@@ -1,0 +1,32 @@
+/* components/Header.module.css */
+
+.header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    background-color: white;
+
+  }
+  
+  .logoContainer {
+    flex: 1;
+  }
+  
+  .logo {
+    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    height: auto;
+  }
+  
+  .iconContainer {
+    flex-shrink: 0;
+  }
+  
+  .heartIcon {
+    width: 24px; /* Ajusta el tamaño del corazón según tus necesidades */
+    height: auto;
+    cursor: pointer;
+  }
+  
