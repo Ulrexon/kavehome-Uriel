@@ -29,12 +29,13 @@
     overflow-x: auto; 
     white-space: nowrap;
     text-align: center;
-    padding-top: 2%;
+    padding-top: 5%;
   }
   
   .card {
     display: inline-block;
     width: 200px;
+    height: 200px;
     margin-right: 10px; 
   }
   
@@ -42,3 +43,4 @@
     width: 100%;
     height: auto;
   }
+

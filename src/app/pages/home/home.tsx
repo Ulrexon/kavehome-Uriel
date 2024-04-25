@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <div className="home-container">
 
       <img className={styles.homeImage} src="/images/imagenhome.png" alt="Home Image" />
-      
+
       <h2 style={{ textAlign: 'center'}}>Inspírate</h2>
 
       <div className={styles.botoneraContainer}>
@@ -22,20 +22,28 @@ const Home: React.FC = () => {
 
       <div className={styles.cardListContainer}>
         <div className={styles.card}>
-          <img src="/images/ejemplo.jpg" alt="test" />
-          <p>Nombre del artículo</p>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>We are Kave</p>
         </div>
         <div className={styles.card}>
-          <img src="/images/ejemplo.jpg" alt="test" />
-          <p>Nombre del artículo</p>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>Estancias</p>
         </div>
         <div className={styles.card}>
-          <img src="/images/ejemplo.jpg" alt="test" />
-          <p>Nombre del artículo</p>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>Muebles</p>
         </div>
         <div className={styles.card}>
-          <img src="/images/ejemplo.jpg" alt="test" />
-          <p>Nombre del artículo</p>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>Decoración</p>
+        </div>
+        <div className={styles.card}>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>Proyectos</p>
+        </div>
+        <div className={styles.card}>
+          <img src="/images/imagencard.jpg" alt="img" />
+          <p>Estilos</p>
         </div>
       </div>
 
