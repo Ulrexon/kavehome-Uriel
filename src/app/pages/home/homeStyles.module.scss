@@ -14,7 +14,6 @@
     justify-content: center;
   }
   
-
 .button1 {
     text-decoration: underline;
     background-color: #F5F5F5;
@@ -31,8 +30,10 @@
     white-space: nowrap;
     text-align: center;
     padding-top: 5%;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
   }
-  
+
   .card {
     display: inline-block;
     width: 200px;
