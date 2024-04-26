@@ -23,13 +23,13 @@
   }
   
 
-  /* card */
+  // card 
 
   .cardListContainer {
     overflow-x: auto; 
     white-space: nowrap;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 2%;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; 
   }
@@ -46,7 +46,7 @@
     height: auto;
   }
 
-  /* cardProductos */
+  // cardProductos
   .cardListContainerProductos {
     margin-top: 5%;
     text-align: center;
@@ -57,8 +57,7 @@
     display: inline-block;
     width: 200px;
     height: 200px;
-    margin-right: 10px;
-    margin-bottom: 10px; 
+    margin: 50px;
     box-sizing: border-box; 
   }
   
@@ -67,15 +66,24 @@
     height: auto;
   }
 
+  .cuadradoEjemplo {
+    background: #F5F5F5;
+    width: 250px;
+    height: 200px;
+  }
+
+  // Boton para mostrar todos los productos
+  
   .buttonTodos {
     background-color: white;
     padding: 20px 20px;
     border: 1px solid #ccc;
+    color:black;
     font-size: 16px;
     text-align: center;
     display: block;
     margin: 0 auto;
     margin-top: 5%;
     margin-bottom: 5%;
+    cursor: pointer;
   }
-  
