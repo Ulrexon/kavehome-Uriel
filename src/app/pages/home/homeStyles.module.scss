@@ -45,3 +45,37 @@
     width: 100%;
     height: auto;
   }
+
+  /* cardProductos */
+  .cardListContainerProductos {
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .cardProductos {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
+  }
+  
+  .cardProductos img {
+    width: 100%;
+    height: auto;
+  }
+
+  .buttonTodos {
+    background-color: white;
+    padding: 20px 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  

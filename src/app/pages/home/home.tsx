@@ -71,9 +71,9 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.cardListContainer}>
+      <div className={styles.cardListContainerProductos}>
         {productosEjemplo.map(producto => (
-          <div key={producto.id} className={styles.card}>
+          <div key={producto.id} className={styles.cardProductos}>
             <img src={producto.imagen} alt="img" />
             <p>{producto.titulo}</p>
             <p>{producto.precio} €</p>
@@ -81,8 +81,7 @@ const Home: React.FC = () => {
         ))}
       </div>
 
-      <button className={styles.verTodosButton}>Ver todos los productos</button>
-
+      <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
 
     </div>    
   );
