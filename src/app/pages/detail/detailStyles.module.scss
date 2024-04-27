@@ -1,0 +1,5 @@
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Divide la página en dos columnas, una para la foto y otra para la información */
+  grid-gap: 20px; /* Espacio entre las dos secciones */
+}
