@@ -1,0 +1,27 @@
+  // cardProductos
+  
+  .cardProductos {
+    display: inline-block;
+    margin: 10px;
+    box-sizing: border-box; 
+  }
+  
+  .cardProductos img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cuadradoEjemplo {
+    background: #F5F5F5;
+    width: 250px;
+    height: 200px;
+  }
+
+  .titulo {
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .precio {
+    text-align: left;
+  }

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import styles from './homeStyles.module.scss';
+import globalStyles from '../../styles/global.module.scss';
 import { obtenerProductos } from '../../services/productos.service';
-import productos from '../listado/page';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import ProductCard from '../../components/productCard'; 
 
 obtenerProductos()
   .then(productos => {
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 
       <img className={styles.homeImage} src="/images/imagenhome.png" alt="Home Image" />
 
-      <h2 style={{ textAlign: 'center' }}>Inspírate</h2>
+      <p className={globalStyles.titulo}>Inspírate</p>
 
       <div className={styles.botoneraContainer}>
         <div className={styles.button1}>Estancias</div>
@@ -76,15 +76,15 @@ const Home: React.FC = () => {
 
       <div className={styles.cardListContainerProductos}>
         {productosEjemplo.map(producto => (
-          <div key={producto.id} className={styles.cardProductos}>
-            <div className={styles.cuadradoEjemplo}></div> 
-            <p style={{ textAlign: 'left', fontWeight: 'bold' }}>{producto.titulo}</p>
-            <p style={{ textAlign: 'left' }}>{producto.precio} €</p>
-          </div>
+          <ProductCard
+            key={producto.id}
+            titulo={producto.titulo}
+            precio={producto.precio}
+          />
         ))}
       </div>
 
-      <Link href="/pages/listado">
+      <Link href="/pages/productos">
         <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
       </Link>
 
