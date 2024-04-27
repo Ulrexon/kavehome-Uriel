@@ -1,4 +1,4 @@
-// home.tsx
+// home
 
 import React from 'react';
 import styles from './homeStyles.module.scss';
