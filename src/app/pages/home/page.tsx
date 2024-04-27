@@ -3,6 +3,9 @@
 import React from 'react';
 import styles from './homeStyles.module.scss';
 import { obtenerProductos } from '../../services/productos.service';
+import productos from '../listado/page';
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 obtenerProductos()
   .then(productos => {
@@ -74,14 +77,16 @@ const Home: React.FC = () => {
       <div className={styles.cardListContainerProductos}>
         {productosEjemplo.map(producto => (
           <div key={producto.id} className={styles.cardProductos}>
-            <div className={styles.cuadradoEjemplo}></div>
+            <div className={styles.cuadradoEjemplo}></div> 
             <p style={{ textAlign: 'left', fontWeight: 'bold' }}>{producto.titulo}</p>
             <p style={{ textAlign: 'left' }}>{producto.precio} €</p>
           </div>
         ))}
       </div>
 
-      <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
+      <Link href="/pages/listado">
+        <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
+      </Link>
 
     </div>
   );
