@@ -1,13 +1,17 @@
 import React from 'react';
-import './detailStyles.module.scss'; // Importa tu archivo CSS para estilos
+import styles from './detailStyles.module.scss'; // Importa tu archivo CSS para estilos
 
 const Detail: React.FC = () => {
   return (
-    <div className="detail-container">
-      <div>
-        <img src="/images/imagencard.jpg" alt="Foto" />
+    <div className={styles.container}>
+      <div className={styles.image}>
+        <img 
+          src="/images/imagencard.jpg" 
+          alt="Foto" 
+          style={{ maxWidth: '100%', maxHeight: '1500px' }} // Limita el tamaño de la imagen
+        />
       </div>
-      <div>
+      <div className={styles.text}>
         <h1>Título</h1>
         <p>Descripción</p>
       </div>

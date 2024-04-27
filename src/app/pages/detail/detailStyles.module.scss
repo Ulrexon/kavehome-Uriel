@@ -1,5 +1,14 @@
-.detail-container {
+.container {
   display: grid;
   grid-template-columns: 1fr 2fr; /* Divide la página en dos columnas, una para la foto y otra para la información */
-  grid-gap: 20px; /* Espacio entre las dos secciones */
+  grid-auto-rows: min-content; /* El contenido se moverá hacia abajo si no hay suficiente espacio en la misma fila */
+  gap: 10px; /* Espacio entre las celdas */
+}
+
+.image {
+  grid-column: 1 / 2; /* La imagen estará en la primera columna */
+}
+
+.text {
+  grid-column: 2 / 3; /* El texto estará en la segunda columna */
 }
