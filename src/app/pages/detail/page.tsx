@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './detailStyles.module.scss'; // Importa tu archivo CSS para estilos
+import styles from './detailStyles.module.scss';
 
 const Detail: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const Detail: React.FC = () => {
         <img 
           src="/images/imagencard.jpg" 
           alt="Foto" 
-          style={{ maxWidth: '100%', maxHeight: '1500px' }} // Limita el tamaño de la imagen
+          style={{ maxWidth: '100%', maxHeight: '1500px' }}
         />
       </div>
       <div className={styles.text}>

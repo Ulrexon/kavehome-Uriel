@@ -1,14 +1,14 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Divide la página en dos columnas, una para la foto y otra para la información */
-  grid-auto-rows: min-content; /* El contenido se moverá hacia abajo si no hay suficiente espacio en la misma fila */
-  gap: 10px; /* Espacio entre las celdas */
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: min-content; 
+  gap: 10px;
 }
 
 .image {
-  grid-column: 1 / 2; /* La imagen estará en la primera columna */
+  grid-column: 1 / 2;
 }
 
 .text {
-  grid-column: 2 / 3; /* El texto estará en la segunda columna */
+  grid-column: 2 / 3; 
 }
