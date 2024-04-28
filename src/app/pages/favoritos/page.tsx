@@ -17,6 +17,7 @@ const Favoritos: React.FC = () => {
               key={1}
               titulo={'test'}
               precio={5}
+              imagen=''
             />
         </div>
       </div>
