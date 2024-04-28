@@ -15,6 +15,7 @@ const Favoritos: React.FC = () => {
         <div className={styles.cardListContainerProductos}>
             <ProductCard
               key={1}
+              id='1'
               titulo={'test'}
               precio={5}
               imagen=''

@@ -74,6 +74,7 @@ const Home: React.FC = () => {
             {productos.map(producto => (
               <ProductCard
                 key={producto.productSku}
+                id={producto.productSku}
                 titulo={producto.productName.substring(0, 20) + '...'}
                 precio={producto.productPrice}
                 imagen={producto.productImageUrl}

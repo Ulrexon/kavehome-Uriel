@@ -1,14 +1,15 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-rows: min-content; 
-  gap: 10px;
-}
-
-.image {
-  grid-column: 1 / 2;
-}
-
-.text {
-  grid-column: 2 / 3; 
-}
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: min-content; 
+    gap: 10px;
+  }
+  
+  .image {
+    grid-column: 1 / 2;
+  }
+  
+  .text {
+    grid-column: 2 / 3; 
+  }
+  

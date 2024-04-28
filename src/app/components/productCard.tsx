@@ -5,12 +5,13 @@ import styles from './productCardStyles.module.scss';
 import Link from 'next/link';
 
 interface ProductCardProps {
+  id: string;
   titulo: string;
   precio: number;
   imagen: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ titulo, precio, imagen }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen }) => {
   return (
     <>
       <Link href="/pages/detail">

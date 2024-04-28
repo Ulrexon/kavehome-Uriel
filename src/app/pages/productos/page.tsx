@@ -59,6 +59,7 @@ const Listado: React.FC = () => {
             {currentProducts.map(producto => (
               <ProductCard
                 key={producto.productSku}
+                id={producto.productSku}
                 titulo={producto.productName.substring(0, 20) + '...'}
                 precio={producto.productPrice}
                 imagen={producto.productImageUrl}
@@ -71,7 +72,7 @@ const Listado: React.FC = () => {
         <div className={styles.pagination}>
           {/* Barra de paginación */}
           <button onClick={() => setPage(currentPage - 1)} disabled={currentPage === 1}>
-            Anterior
+            &lt;
           </button>
           {getPageNumbers().map(number => (
             <button key={number} onClick={() => setPage(number)} className={currentPage === number ? styles.active : undefined}>
@@ -79,7 +80,7 @@ const Listado: React.FC = () => {
             </button>
           ))}
           <button onClick={() => setPage(currentPage + 1)} disabled={currentPage === totalPages}>
-            Siguiente
+            &gt;
           </button>
         </div>
       </div>
