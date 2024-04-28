@@ -1,35 +1,30 @@
 // home
 
-import React from 'react';
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import styles from './homeStyles.module.scss';
 import globalStyles from '../../styles/global.module.scss';
 import { obtenerProductos } from '../../services/productos.service';
 import Link from 'next/link';
 import ProductCard from '../../components/productCard'; 
 
-obtenerProductos()
-  .then(productos => {
-    // Hacer algo con los datos
-    console.log(productos);
-  })
-  .catch(error => {
-    // Manejar errores
-    console.error(error);
-  });
-
 const Home: React.FC = () => {
 
-  const productosEjemplo = [
-    { id: 1, imagen: "/images/producto1.jpg", titulo: "Producto 1", precio: 20 },
-    { id: 2, imagen: "/images/producto2.jpg", titulo: "Producto 2", precio: 30 },
-    { id: 3, imagen: "/images/producto3.jpg", titulo: "Producto 3", precio: 25 },
-    { id: 4, imagen: "/images/producto4.jpg", titulo: "Producto 4", precio: 35 },
-    { id: 5, imagen: "/images/producto5.jpg", titulo: "Producto 5", precio: 40 },
-    { id: 6, imagen: "/images/producto6.jpg", titulo: "Producto 6", precio: 22 },
-    { id: 7, imagen: "/images/producto7.jpg", titulo: "Producto 7", precio: 28 },
-    { id: 8, imagen: "/images/producto8.jpg", titulo: "Producto 8", precio: 32 },
-    { id: 9, imagen: "/images/producto9.jpg", titulo: "Producto 9", precio: 18 },
-  ];
+  const [productos, setProductos] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProductos = async () => {
+      try {
+        const productosObtenidos = await obtenerProductos();
+        setProductos(productosObtenidos.slice(11,20));
+      } catch (error) {
+        console.error('Error al obtener los productos:', error);
+      }
+    };
+
+    fetchProductos();
+  }, []);
 
   return (
     <div className="home-container">
@@ -74,16 +69,21 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.cardListContainerProductos}>
-        {productosEjemplo.map(producto => (
-          <ProductCard
-            key={producto.id}
-            titulo={producto.titulo}
-            precio={producto.precio}
-          />
-        ))}
-      </div>
-
+    {productos.length > 0 ? (
+            <div className={styles.cardListContainerProductos}>
+            {productos.map(producto => (
+              <ProductCard
+                key={producto.productSku}
+                titulo={producto.productName.substring(0, 20) + '...'}
+                precio={producto.productPrice}
+                imagen={producto.productImageUrl}
+              />
+            ))}
+          </div>
+    ) : (
+      <p>Cargando productos...</p>
+    )}
+      
       <Link href="/pages/productos">
         <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
       </Link>

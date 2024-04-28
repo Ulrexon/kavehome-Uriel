@@ -1,4 +1,3 @@
-// productos.service.ts
 import { Productos } from './productos.interface';
 
 export async function obtenerProductos(): Promise<Productos[]> {
@@ -8,8 +7,17 @@ export async function obtenerProductos(): Promise<Productos[]> {
             throw new Error('Error al obtener los datos');
         }
         const datos = await respuesta.json();
-        alert(datos);
-        return datos as Productos[];
+
+        const productos: Productos[] = datos.results.map((item: Productos) => {
+            return {
+                productSku: item.productSku,
+                productName: item.productName,
+                productImageUrl: item.productImageUrl,
+                productPrice: item.productPrice
+            };
+        });
+
+        return productos;
     } catch (error) {
         console.error('Error:', error);
         return []; 

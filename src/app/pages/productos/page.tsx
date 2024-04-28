@@ -1,5 +1,7 @@
 // listado.tsx
 
+"use client";
+
 import React from 'react';
 import globalStyles from '../../styles/global.module.scss';
 import styles from './productosStyles.module.scss';
@@ -18,6 +20,7 @@ const Listado: React.FC = () => {
               key={1}
               titulo={'test'}
               precio={5}
+              imagen=''
             />
         </div>
       </div>
