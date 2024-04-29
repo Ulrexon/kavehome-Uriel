@@ -1,7 +1,7 @@
 // ProductCard.tsx
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './productCardStyles.module.scss';
 import Link from 'next/link';
 import { FaRegHeart, FaHeart } from "react-icons/fa6";
@@ -19,7 +19,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen })
 
   const handleFavoriteToggle = () => {
     setFavorito(!favorito);
+    const favoritosGuardados = JSON.parse(sessionStorage.getItem('favoritos') || '[]');
+    const nuevosFavoritos = [favorito, id];
+    sessionStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
   };
+
+   useEffect(() => {
+    const favoritosGuardados = JSON.parse(sessionStorage.getItem('favoritos') || '[]');
+    setFavorito(favoritosGuardados.includes(id));
+  }, []);
 
   return (
     <>
