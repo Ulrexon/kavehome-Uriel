@@ -4,6 +4,7 @@
     display: inline-block;
     margin: 10px;
     box-sizing: border-box; 
+    position: relative; /* Añade esta línea */
   }
   
   .cardProductos img {
@@ -23,4 +24,11 @@
 
   .precio {
     text-align: left;
+  }
+
+  .corazon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
   }
