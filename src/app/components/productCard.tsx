@@ -1,10 +1,10 @@
 // ProductCard.tsx
+'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './productCardStyles.module.scss';
 import Link from 'next/link';
-import { FaRegHeart } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa6";
+import { FaRegHeart, FaHeart } from "react-icons/fa6";
 
 interface ProductCardProps {
   id: string;
@@ -14,12 +14,19 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen }) => {
+
+  const [favorito, setFavorito] = useState(false);
+
+  const handleFavoriteToggle = () => {
+    setFavorito(!favorito);
+  };
+
   return (
     <>
 
       <div className={styles.cardProductos}>
-        <div className={styles.corazon}>
-          <FaRegHeart />
+        <div className={styles.corazon} onClick={handleFavoriteToggle}>
+          {favorito ? <FaHeart /> : <FaRegHeart />}
         </div>
         <Link href="/pages/detail">
           <img className={styles.imagenProducto} src={imagen} alt={titulo} />
