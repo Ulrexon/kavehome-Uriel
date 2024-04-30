@@ -18,20 +18,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen })
   const [favorito, setFavorito] = useState(false);
 
   const handleFavoriteToggle = () => {
-    setFavorito(!favorito);
     const favoritosGuardados = JSON.parse(sessionStorage.getItem('favoritos') || '[]');
-    const nuevosFavoritos = [favorito, id];
+    const nuevosFavoritos = favoritosGuardados.includes(id)
+      ? favoritosGuardados.filter((fav: string) => fav !== id)
+      : [...favoritosGuardados, id];
+    setFavorito(!favorito);
     sessionStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
   };
 
-   useEffect(() => {
+  useEffect(() => {
     const favoritosGuardados = JSON.parse(sessionStorage.getItem('favoritos') || '[]');
     setFavorito(favoritosGuardados.includes(id));
-  }, []);
+  }, [id]);
 
   return (
     <>
-
       <div className={styles.cardProductos}>
         <div className={styles.corazon} onClick={handleFavoriteToggle}>
           {favorito ? <FaHeart /> : <FaRegHeart />}
@@ -42,7 +43,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen })
         <p className={styles.titulo}>{titulo}</p>
         <p className={styles.precio}>{precio} €</p>
       </div>
-
     </>
   );
 }

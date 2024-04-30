@@ -15,8 +15,10 @@ const Favoritos: React.FC = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
+        const favoritosGuardados = JSON.parse(sessionStorage.getItem('favoritos') || '[]');
+        console.log(favoritosGuardados);
         const productosObtenidos = await obtenerProductos();
-        setProductos(productosObtenidos);
+        setProductos(productosObtenidos.filter(producto => favoritosGuardados.includes(producto.productSku)));
       } catch (error) {
         console.error('Error al obtener los productos:', error);
       }
