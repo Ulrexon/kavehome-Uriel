@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen })
         <div className={styles.corazon} onClick={handleFavoriteToggle}>
           {favorito ? <FaHeart /> : <FaRegHeart />}
         </div>
-        <Link href="/pages/detail">
+        <Link href={`/pages/detail?id=${id}`}>
           <img className={styles.imagenProducto} src={imagen} alt={titulo} />
         </Link>
         <p className={styles.titulo}>{titulo}</p>

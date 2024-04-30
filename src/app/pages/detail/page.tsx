@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react';
 import styles from './detailStyles.module.scss';
 
 const Detail: React.FC = () => {
+
   return (
     <div className={styles.container}>
       <div className={styles.image}>
@@ -12,7 +15,7 @@ const Detail: React.FC = () => {
         />
       </div>
       <div className={styles.text}>
-        <h1>Título</h1>
+       <h1>Detalle del producto con ID: </h1>
         <p>Descripción</p>
       </div>
     </div>
