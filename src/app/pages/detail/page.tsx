@@ -42,7 +42,7 @@ const DetailContent: React.FC = () => {
       <div className={styles.image}>
         <Link href={`/pages/image?url=${producto.productImageUrl}`}>
           <img
-            src={producto.productImageUrl}
+            src={producto.productImageUrl ?? 'https://c.media.kavehome.com/images/Products/S0900070HE12_1V01.jpg'}
             alt={producto.productName}
             className={styles.imageResponsive}
           />

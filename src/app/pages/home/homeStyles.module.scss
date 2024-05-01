@@ -26,7 +26,7 @@
   left: 0%;
   padding: 30px;
   text-align: left;
-  font-size: 5vw; 
+  font-size: 5vw;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -36,79 +36,92 @@
   .homeImage {
     display: block;
   }
+
   .homeImageMobile {
     display: none;
   }
+
   .textImage {
     position: absolute;
     top: 55%;
     left: 0%;
     padding: 30px;
     text-align: left;
-    font-size: 3vw; 
+    font-size: 3vw;
     color: #FFFFFF;
     font-weight: bold;
   }
 }
 
 
-  .botoneraContainer {
-    padding-top: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+.botoneraContainer {
+  padding-top: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .button1 {
-    text-decoration: underline;
-    background-color: #F5F5F5;
-    cursor: pointer;
-    margin: 5px;
-    padding: 5px 15px 15px; 
-  }
-  
+  text-decoration: underline;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px 15px 15px;
+}
 
-  // card 
 
-  .cardListContainer {
-    overflow-x: auto; 
-    white-space: nowrap;
-    text-align: center;
-    padding-top: 2%;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; 
-  }
+// card 
 
-  .card {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    margin-right: 10px; 
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-  }
+.cardListContainer {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-align: center;
+  padding-top: 2%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
 
-  .cardListContainerProductos {
-    margin-top: 5%;
-    text-align: center;
-    justify-content: center;
-  }
+.cardListContainer::-webkit-scrollbar {
+  display: none;
+}
 
-  // Boton para mostrar todos los productos
-  
-  .buttonTodos {
-    background-color: white;
-    padding: 20px 20px;
-    border: 1px solid #ccc;
-    color:black;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    cursor: pointer;
-  }
+.cardListContainer.dragging {
+  cursor: grabbing;
+}
+
+
+.card {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.cardListContainerProductos {
+  margin-top: 5%;
+  text-align: center;
+  justify-content: center;
+}
+
+// Boton para mostrar todos los productos
+
+.buttonTodos {
+  background-color: white;
+  padding: 20px 20px;
+  border: 1px solid #ccc;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}

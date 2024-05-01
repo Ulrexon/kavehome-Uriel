@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, titulo, precio, imagen })
           {favorito ? <FaHeart /> : <FaRegHeart />}
         </div>
         <Link href={`/pages/detail?id=${id}`}>
-          <img className={styles.imagenProducto} src={imagen} alt={titulo} />
+          <img className={styles.imagenProducto} src={imagen ?? 'https://c.media.kavehome.com/images/Products/S0900070HE12_1V01.jpg'} alt={titulo} />
         </Link>
         <p className={styles.titulo}>{titulo}</p>
         <p className={styles.precio}>{precio} €</p>
