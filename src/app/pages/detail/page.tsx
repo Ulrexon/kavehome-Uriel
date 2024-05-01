@@ -1,11 +1,11 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import styles from './detailStyles.module.scss';
 import { useSearchParams } from 'next/navigation';
 import { obtenerProductos } from '../../services/productos.service';
 
-const Detail: React.FC = () => {
+const DetailContent: React.FC = () => {
   const [producto, setProducto] = useState<any>(null);
   const searchParams = useSearchParams();
   const search = searchParams.get('id') ?? '';
@@ -17,7 +17,7 @@ const Detail: React.FC = () => {
         const productoEncontrado = productosObtenidos.find(productos => productos.productSku === search);
         if (productoEncontrado) {
           setProducto(productoEncontrado);
-          console.log(productoEncontrado)
+          console.log(productoEncontrado);
         } else {
           console.log('Producto no encontrado');
         }
@@ -53,6 +53,14 @@ const Detail: React.FC = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const Detail: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Cargando parámetros de búsqueda...</div>}>
+      <DetailContent />
+    </Suspense>
   );
 };
 
