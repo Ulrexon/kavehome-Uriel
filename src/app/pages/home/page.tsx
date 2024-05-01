@@ -31,6 +31,7 @@ const Home: React.FC = () => {
 
       <div className={styles.divImage}>
         <img className={styles.homeImage} src="/images/imagenhome.png" alt="HomeImage" />
+        <img className={styles.homeImageMobile} src="/images/imagenhomemobile.png" alt="HomeImage" />
 
         <div className={styles.textImage}>
           <p>Cuando la realidad supera la ficción.</p>
