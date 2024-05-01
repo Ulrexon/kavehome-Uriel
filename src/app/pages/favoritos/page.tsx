@@ -55,7 +55,7 @@ const Favoritos: React.FC = () => {
     <div style={{paddingTop: '20px'}}>
       <div>
         <p className={globalStyles.titulo}>Lista de Favoritos</p>
-        <p className={globalStyles.subtitulo}>Lorem ipsum dolor sit amet.</p>
+        <p className={globalStyles.subtitulo}>Explora tus productos favoritos guardados aquí.</p>
       </div>
       <div style={{ textAlign: 'center', paddingTop: '50px' }}>
         {productos.length > 0 ? (
