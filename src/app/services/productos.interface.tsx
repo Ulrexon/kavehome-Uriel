@@ -1,4 +1,5 @@
-// productos.interface.ts
+// productos.interface
+
 export interface Productos {
     productSku: string;
     productName: string;

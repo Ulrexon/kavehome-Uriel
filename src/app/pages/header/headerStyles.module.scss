@@ -1,4 +1,4 @@
-/* components/Header.module.css */
+/* Header.module.css */
 
 .header {
     position: fixed; 
@@ -17,8 +17,9 @@
   }
   
   .logo {
-    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    max-width: 100px;
     height: auto;
+    cursor: pointer;
   }
   
   .iconContainer {
@@ -27,7 +28,7 @@
   }
   
   .heartIcon {
-    width: 24px; /* Ajusta el tamaño del corazón según tus necesidades */
+    width: 24px;
     height: auto;
     cursor: pointer;
   }

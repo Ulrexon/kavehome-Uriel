@@ -1,4 +1,4 @@
-// Image.tsx
+// image
 
 import React from 'react';
 import styles from './headerStyles.module.scss';

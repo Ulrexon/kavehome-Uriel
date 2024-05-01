@@ -1,3 +1,5 @@
+// productos.service
+
 import { Productos } from './productos.interface';
 
 export async function obtenerProductos(): Promise<Productos[]> {
