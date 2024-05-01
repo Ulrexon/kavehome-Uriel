@@ -1,12 +1,28 @@
 /* home.module.css */
 
+.divImage {
+  position: relative;
+  padding-bottom: 30px;
+}
+
 .homeImage {
-    max-width: 100%;
-    height: auto;
-    max-height: 947px;
-    width: 100%;
-  }
-  
+  max-width: 100%;
+  height: auto;
+  max-height: 947px;
+  width: 100%;
+}
+
+.textImage {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  padding: 30px;
+  text-align: left;
+  font-size: 3vw; 
+  color: #FFFFFF;
+}
+
+
   .botoneraContainer {
     padding-top: 1%;
     display: flex;

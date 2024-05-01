@@ -7,7 +7,7 @@ import styles from './homeStyles.module.scss';
 import globalStyles from '../../styles/global.module.scss';
 import { obtenerProductos } from '../../services/productos.service';
 import Link from 'next/link';
-import ProductCard from '../../components/productCard'; 
+import ProductCard from '../../components/productCard';
 
 const Home: React.FC = () => {
 
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
     const fetchProductos = async () => {
       try {
         const productosObtenidos = await obtenerProductos();
-        setProductos(productosObtenidos.slice(11,20));
+        setProductos(productosObtenidos.slice(11, 20));
       } catch (error) {
         console.error('Error al obtener los productos:', error);
       }
@@ -29,7 +29,15 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
 
-      <img className={styles.homeImage} src="/images/imagenhome.png" alt="Home Image" />
+      <div className={styles.divImage}>
+        <img className={styles.homeImage} src="/images/imagenhome.png" alt="HomeImage" />
+
+        <div className={styles.textImage}>
+          <p>Cuando la realidad supera la ficción.</p>
+          <p>Trucos para estar en casa.</p>
+        </div>
+      </div>
+
 
       <p className={globalStyles.titulo}>Inspírate</p>
 
@@ -69,22 +77,22 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-    {productos.length > 0 ? (
-            <div className={styles.cardListContainerProductos}>
-            {productos.map(producto => (
-              <ProductCard
-                key={producto.productSku}
-                id={producto.productSku}
-                titulo={producto.productName.substring(0, 20) + '...'}
-                precio={producto.productPrice}
-                imagen={producto.productImageUrl}
-              />
-            ))}
-          </div>
-    ) : (
-      <p>Cargando productos...</p>
-    )}
-      
+      {productos.length > 0 ? (
+        <div className={styles.cardListContainerProductos}>
+          {productos.map(producto => (
+            <ProductCard
+              key={producto.productSku}
+              id={producto.productSku}
+              titulo={producto.productName.substring(0, 20) + '...'}
+              precio={producto.productPrice}
+              imagen={producto.productImageUrl}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Cargando productos...</p>
+      )}
+
       <Link href="/pages/productos">
         <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>
       </Link>
