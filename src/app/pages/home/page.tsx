@@ -80,19 +80,24 @@ const Home: React.FC = () => {
 
       {productos.length > 0 ? (
         <div className={styles.cardListContainerProductos}>
-          {productos.map(producto => (
-            <ProductCard
-              key={producto.productSku}
-              id={producto.productSku}
-              titulo={producto.productName.substring(0, 20) + '...'}
-              precio={producto.productPrice}
-              imagen={producto.productImageUrl}
-            />
+          {[...Array(Math.ceil(productos.length / 3))].map((_, index) => (
+            <div key={index} className={styles.productosRow}>
+              {productos.slice(index * 3, index * 3 + 3).map(producto => (
+                <ProductCard
+                  key={producto.productSku}
+                  id={producto.productSku}
+                  titulo={producto.productName.substring(0, 20) + '...'}
+                  precio={producto.productPrice}
+                  imagen={producto.productImageUrl}
+                />
+              ))}
+            </div>
           ))}
         </div>
       ) : (
         <p>Cargando productos...</p>
       )}
+
 
       <Link href="/pages/productos">
         <button className={styles.buttonTodos}>VER TODOS LOS PRODUCTOS</button>

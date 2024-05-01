@@ -11,7 +11,7 @@ import { obtenerProductos } from '../../services/productos.service';
 const Listado: React.FC = () => {
   const [productos, setProductos] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
+  const productsPerPage = 20;
   const pageRange = 5;
 
   useEffect(() => {
