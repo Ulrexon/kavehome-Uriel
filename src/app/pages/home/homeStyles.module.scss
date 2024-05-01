@@ -22,11 +22,11 @@
 
 .textImage {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 0%;
   padding: 30px;
   text-align: left;
-  font-size: 3vw; 
+  font-size: 5vw; 
   color: #FFFFFF;
 }
 
@@ -37,6 +37,15 @@
   }
   .homeImageMobile {
     display: none;
+  }
+  .textImage {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    padding: 30px;
+    text-align: left;
+    font-size: 3vw; 
+    color: #FFFFFF;
   }
 }
 
