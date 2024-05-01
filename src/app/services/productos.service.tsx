@@ -2,7 +2,14 @@ import { Productos } from './productos.interface';
 
 export async function obtenerProductos(): Promise<Productos[]> {
     try {
-        const respuesta = await fetch('https://kavehome.com/nfeeds/es/es/templatebuilder/20240221');
+        const fechaActual = new Date();
+        const año = fechaActual.getFullYear();
+        const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+        const día = fechaActual.getDate().toString().padStart(2, '0');
+
+        const url = `https://kavehome.com/nfeeds/es/es/templatebuilder/${año}${mes}${día}`;
+
+        const respuesta = await fetch(url);
         if (!respuesta.ok) {
             throw new Error('Error al obtener los datos');
         }
@@ -13,7 +20,9 @@ export async function obtenerProductos(): Promise<Productos[]> {
                 productSku: item.productSku,
                 productName: item.productName,
                 productImageUrl: item.productImageUrl,
-                productPrice: item.productPrice
+                productPrice: item.productPrice,
+                productCollection: item.productCollection,
+                productCategoryHierarchy: item.productCategoryHierarchy
             };
         });
 

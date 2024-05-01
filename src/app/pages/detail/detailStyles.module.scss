@@ -1,15 +1,26 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-auto-rows: min-content; 
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.text {
+  max-width: 100%;
+}
+
+.imageResponsive {
+  width: 100%;
+  height: auto;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .image {
-    grid-column: 1 / 2;
-  }
-  
-  .text {
-    grid-column: 2 / 3; 
-  }
-  
+}

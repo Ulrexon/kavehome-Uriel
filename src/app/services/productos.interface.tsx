@@ -4,4 +4,6 @@ export interface Productos {
     productName: string;
     productPrice: string;
     productImageUrl: string;
+    productCollection: string;
+    productCategoryHierarchy: string;
 }
