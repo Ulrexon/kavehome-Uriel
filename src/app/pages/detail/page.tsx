@@ -6,6 +6,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styles from './detailStyles.module.scss';
 import { useSearchParams } from 'next/navigation';
 import { obtenerProductos } from '../../services/productos.service';
+import Link from 'next/link';
 
 const DetailContent: React.FC = () => {
   const [producto, setProducto] = useState<any>(null);
@@ -37,15 +38,19 @@ const DetailContent: React.FC = () => {
 
   return (
     <div className={styles.container}>
+
       <div className={styles.image}>
-        <img
-          src={producto.productImageUrl}
-          alt={producto.productName}
-          className={styles.imageResponsive}
-        />
+        <Link href={`/pages/image?url=${producto.productImageUrl}`}>
+          <img
+            src={producto.productImageUrl}
+            alt={producto.productName}
+            className={styles.imageResponsive}
+          />
+        </Link>
       </div>
+
       <div className={styles.text}>
-        <div style={{paddingBottom: '20px'}}>
+        <div style={{ paddingBottom: '20px' }}>
           <h1>{producto.productCollection}</h1>
           <p>{producto.productCategoryHierarchy}</p>
         </div>
