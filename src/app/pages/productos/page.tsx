@@ -50,7 +50,7 @@ const Listado: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{paddingTop: '20px'}}>
       <div>
         <p className={globalStyles.titulo}>Productos</p>
         <p className={globalStyles.subtitulo}>Descubre nuestra amplia selección de productos disponibles.</p>
