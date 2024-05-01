@@ -52,7 +52,7 @@ const Favoritos: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{paddingTop: '20px'}}>
       <div>
         <p className={globalStyles.titulo}>Lista de Favoritos</p>
         <p className={globalStyles.subtitulo}>Lorem ipsum dolor sit amet.</p>
@@ -71,7 +71,7 @@ const Favoritos: React.FC = () => {
             ))}
           </div>
         ) : (
-          <p>Cargando productos...</p>
+          <></>
         )}
         <div className={styles.pagination}>
           {/* Barra de paginación */}
