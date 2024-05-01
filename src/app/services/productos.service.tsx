@@ -9,8 +9,11 @@ export async function obtenerProductos(): Promise<Productos[]> {
         const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
         const día = fechaActual.getDate().toString().padStart(2, '0');
 
+
+        // Esto esta preparado para poder cargar los productos de cada dia por prudencia esta puesto en un dia en especifico.
         // const url = `https://kavehome.com/nfeeds/es/es/templatebuilder/${año}${mes}${día}`;
         const url = `https://kavehome.com/nfeeds/es/es/templatebuilder/20240501`;
+        
         const respuesta = await fetch(url);
         if (!respuesta.ok) {
             throw new Error('Error al obtener los datos');
